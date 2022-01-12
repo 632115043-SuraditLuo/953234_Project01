@@ -6,8 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student GPA</title>
     <style>
+        table td, table th{
+            border: 2px solid;
+            text-align: center;
+        }
+        
         #myForm{
             display: none;
+        }
+        #profile{
+            width: 8vw;
+            height: 8vw;
+        }
+        #image{
+            width: 80%;
+        }
+        #grade{
+            display: block;
         }
     </style>
 </head>
@@ -15,35 +30,82 @@
     <h1>Student GPA</h1>
     <h2>Choose 1 of 3 students</h2>
     
-    <div>
-        <img src="43_profile.jpg">
-    </div>
+    <table>
+        <tr>
+            <th>
+                <img id ="profile" src="43_profile.jpg">
+            </th>
+            <th>
+                <img id ="profile" src=" ">
+            </th>
+            <th>
+                <img id ="profile" src=" ">
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <button id ="stu" onclick="showSelectBox()">Suradit Luo</button>
+            </td>
+            <td>
+                <button id ="stu" onclick="showSelectBox()">Thictikorne Vin</button>
+            </td>
+            <td>
+                <button id ="stu" onclick="showSelectBox()">Worawut Aunkham</button>
+            </td>
+        </tr>
+    </table>
     <br><br>
-    <div>
-        <button onclick="showSelectBox()">Suradit Luo</button>
-    </div>
-    <br><br>
+    <p id = "txt">coming soon</p>
     <div id="myForm">
-        <form action="/action_page.php">
+        <form>
             <label for="academic">Choose an academic years:</label>
             <select name="academic" id="academic">
-            <option value="63">63</option>
-            <option value="64">64</option>
+                <option value="63">63</option>
+                <option value="64">64</option>
             </select>
             <label for="semester"> semester:</label>
             <select name="semester" id="semester">
-            <option value="1">1</option>
-            <option value="2">2</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
             </select>
-            <br><br>
-            <input type="submit" value="Submit">
         </form>
+        <br><br>
+        <button onclick="showGrade()">Submit</button>
     </div>
-    <p>coming soon</p>
+    
+    <div id = "grade" >
+        <img id = "image" src=" ">
+    </div>
+    <p id = "gpa"></p>
+    <p id = "ce"></p>
     <script>
         function showSelectBox(){
-            let x = document.getElementById("myForm");
-            x.style.display = "block";
+            document.getElementById("myForm").style.display = "block";
+            var name = document.getElementById("stu").textContent;
+            document.getElementById("txt").innerHTML = name;
+        }
+        function showGrade(){
+            var y = document.getElementById("academic");
+            var year = y.value;
+            var sem = document.getElementById("semester");
+            var semester = sem.value;
+            if(document.getElementById("txt").innerText == "Suradit Luo"){
+                document.getElementById("gpa").innerHTML = "GPA: 3.48";
+                document.getElementById("ce").innerHTML = "Total credit: 60";
+                if(year == 63 && semester == 1){
+                    document.querySelector("#grade #image").src = "43_01_63.PNG";
+                }
+                else if(year == 63 && semester == 2){
+                    document.querySelector("#grade #image").src = "43_02_63.PNG";
+                }
+                else if(year == 64 && semester == 1){
+                    document.querySelector("#grade #image").src = "43_01_64.PNG";
+                }
+                else{
+                    document.querySelector("#grade #image").src = " ";
+                }
+            }
+            
         }
     </script>
 </body>
