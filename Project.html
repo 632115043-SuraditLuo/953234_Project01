@@ -6,22 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student GPA</title>
     <style>
-        
+        #myForm{
+            display: none;
+        }
     </style>
 </head>
 <body>
     <h1>Student GPA</h1>
     <h2>Choose 1 of 3 students</h2>
+    
     <div>
-        <div>
-            <img src="43_profile.jpg">
-        </div>
-        <div>
-            <button onclick="showCheckBox()">Suradit Luo</button>
-        </div>
+        <img src="43_profile.jpg">
     </div>
+    <br><br>
+    <div>
+        <button onclick="showSelectBox()">Suradit Luo</button>
+    </div>
+    <br><br>
+    <div id="myForm">
+        <form action="/action_page.php">
+            <label for="academic">Choose an academic years:</label>
+            <select name="academic" id="academic">
+            <option value="63">63</option>
+            <option value="64">64</option>
+            </select>
+            <label for="semester"> semester:</label>
+            <select name="semester" id="semester">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
     <script>
-
+        function showSelectBox(){
+            let x = document.getElementById("myForm");
+            x.style.display = "block";
+        }
     </script>
 </body>
 </html>
