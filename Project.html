@@ -44,13 +44,13 @@
         </tr>
         <tr>
             <td>
-                <button id ="stu" onclick="showSelectBox()">Suradit Luo</button>
+                <button id ="stu1" onclick="showSelectBox(this.id)">Suradit Luo</button>
             </td>
             <td>
-                <button id ="stu" onclick="showSelectBox()">Thictikorne Vin</button>
+                <button id ="stu2" onclick="showSelectBox(this.id)">Thictikorne Vin</button>
             </td>
             <td>
-                <button id ="stu" onclick="showSelectBox()">Worawut Aunkham</button>
+                <button id ="stu3" onclick="showSelectBox(this.id)">Worawut Aunkham</button>
             </td>
         </tr>
     </table>
@@ -79,11 +79,12 @@
     <p id = "gpa"></p>
     <p id = "ce"></p>
     <script>
-        function showSelectBox(){
+        function showSelectBox(stu){
             document.getElementById("myForm").style.display = "block";
-            var name = document.getElementById("stu").textContent;
+            var name = document.getElementById(stu).textContent;
             document.getElementById("txt").innerHTML = name;
         }
+        
         function showGrade(){
             var y = document.getElementById("academic");
             var year = y.value;
