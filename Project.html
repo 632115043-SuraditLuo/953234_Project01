@@ -9,8 +9,7 @@
         table td, table th{
             border: 2px solid;
             text-align: center;
-        }
-        
+        }   
         #myForm{
             display: none;
         }
@@ -23,6 +22,8 @@
         }
         #grade{
             display: block;
+            width: 80%;
+            height: 80%;
         }
     </style>
 </head>
@@ -71,7 +72,7 @@
         </form>
         <br><br>
         <button onclick="showGrade()">Submit</button>
-    </div>
+    </div><br>
     
     <div id = "grade" >
         <img id = "image" src=" ">
@@ -128,13 +129,13 @@
                 document.getElementById("gpa").innerHTML = "GPA: 2.57";
                 document.getElementById("ce").innerHTML = "Total credit: 60";
                 if(year == 63 && semester == 1){
-                    document.querySelector("#grade #image").src = "./Picture/39_01_63.png";
+                    document.querySelector("#grade #image").src = "./Picture/39_01_63.jpg";
                 }
                 else if(year == 63 && semester == 2){
-                    document.querySelector("#grade #image").src = "./Picture/39_02_63.png";
+                    document.querySelector("#grade #image").src = "./Picture/39_02_63.jpg";
                 }
                 else if(year == 64 && semester == 1){
-                    document.querySelector("#grade #image").src = "./Picture/39_01_64.png";
+                    document.querySelector("#grade #image").src = "./Picture/39_01_64.jpg";
                 }
                 else{
                     document.querySelector("#grade #image").src = " ";
