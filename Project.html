@@ -39,7 +39,7 @@
                 <img id ="profile" src="./Picture/15_profile.png ">
             </th>
             <th>
-                <img id ="profile" src="">
+                <img id ="profile" src="./Picture/5039_image.jpg">
             </th>
         </tr>
         <tr>
@@ -124,6 +124,22 @@
                 }
             }
 
+            if(document.getElementById("txt").innerText == "Worawut Aunkham"){
+                document.getElementById("gpa").innerHTML = "GPA: 2.57";
+                document.getElementById("ce").innerHTML = "Total credit: 60";
+                if(year == 63 && semester == 1){
+                    document.querySelector("#grade #image").src = "./Picture/39_01_63.png";
+                }
+                else if(year == 63 && semester == 2){
+                    document.querySelector("#grade #image").src = "./Picture/39_02_63.png";
+                }
+                else if(year == 64 && semester == 1){
+                    document.querySelector("#grade #image").src = "./Picture/39_01_64.png";
+                }
+                else{
+                    document.querySelector("#grade #image").src = " ";
+                }
+            }
         
             
         }
